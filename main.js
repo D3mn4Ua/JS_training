@@ -1,95 +1,29 @@
-//
-// var result = 40+10;
-// console.log(result);
+function sayhello(name) {
+  console.log("Hello, ", name)
+}
 
-// result += 50;
-// console.log(result)
+sayhello('John Pork')
 
-// result = Math.sqrt(result)
-// console.log(result)
-
-// var newresult = 2.427;
-// console.log(newresult.toFixed(1));
-
-//
-// var text = 'Text';
-// console.log(text.toLowerCase());
-
-//
-var names = ['name1', 'name2', 'name3'];
-// console.log(names[1].toUpperCase());
-
-// names[3] = 'name4'
-// console.log(names[3])
-
-// names.push('name5')
-// console.log(names[4])
-// console.log(names)
-
-//
-// if ('5' == 5 && 5 > 0 || names[2] != 'name3'){
-//   console.log('Correct')
-// };
-
-// if (names[2] != 'name3') {
-//   console.log('True')
-// } else {
-//   console.log('False')
-// };
-
-//
-
-// for (var i = 0; i < 10; i++) {
-//   console.log(i);
-//   if (i == 5) {
-//     break;
-//   }
-// };
-
-// for (var j = 0; j < names.length; j++) {
-//   console.log(names[j]);
-//   names[j] = 'j-name'
-//   console.log(names)
-// };
-
-// var a = 0;
-// while (a<10) {
-//   console.log('Its not 10 yet, only', a);
-//   a++
-// };
-
-// function test_function() {
-//   console.log('Hello functions!')
-// };
-
-// test_function();
-
-// var a = 10
-// var b = 60
-// function sum() {
-//   var c = a+b;
-//   return c
-// };
-
-// function multiplying(x, y) {
-//   console.log(x * y)
-// }
-
-// console.log(sum());
-
-// multiplying(10, 7)
-
-//
-
-var Object = {
-  name: 'name1',
-  surname: 'surname1',
-  age: 25,
-  FullName: function() {
-    return this.name + " " + this.surname
-  }
+function sum(...numbers) {
+  var result = 0;
+  for (var n of numbers) {
+    result += n;
+  };
+  return result
 };
 
-Object.name = "name2";
-console.log(Object.name);
-console.log(Object.FullName())
+console.log(sum(10, 5, 10, 60, 2));
+
+function isRound(...numbers) {
+  var result = []
+  for (var n of numbers) {
+    if (Number.isInteger(n) == true) {
+      result.push(`Number: ${n} is round`)
+    } else{
+      result.push(`Number: ${n} is not round.`)
+    }
+  }
+  console.log(result)
+}
+
+isRound(5, 10, 8.2, 0.1, 8, 3)
